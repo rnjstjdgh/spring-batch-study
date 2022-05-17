@@ -1,0 +1,17 @@
+debug: true
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: trace
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/batch?useUnicode=true&serverTimezone=Asia/Seoul
+    username: root
+    password: Rnjs@1q2w3e
+    driver-class-name: com.mysql.cj.jdbc.Driver #mysql인 경우
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+server:
+  port: 8888
