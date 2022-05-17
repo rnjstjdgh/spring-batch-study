@@ -31,7 +31,7 @@ public class unPaidMemberConfig {
     ) {
         log.info("********** This is unPaidMemberJob");
         return jobBuilderFactory.get("unPaidMemberJob")  // 1_1
-                .preventRestart()  // 1_2
+//                .preventRestart()  // 1_2
                 .start(unPaidMemberJobStep)  // 1_3
                 .build();  // 1_4
     }

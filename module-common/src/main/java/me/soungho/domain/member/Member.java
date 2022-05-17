@@ -1,8 +1,6 @@
 package me.soungho.domain.member;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,7 +9,11 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Member {
+
     @Id
     @GeneratedValue
     private Long id;
@@ -53,18 +55,5 @@ public class Member {
 
     public boolean isUnpaid(){
         return this.amountCharged <= this.amountPaid;
-    }
-
-    @Builder
-    public Member(String name, String email, String nickName, int amountCharged, int amountPaid, LocalDate dueDate) {
-        this.name = name;
-        this.email = email;
-        this.nickName = nickName;
-        this.status = MemberStatus.ACTIVE;
-        this.amountCharged = amountCharged;
-        this.amountPaid = amountPaid;
-        this.dueDate = dueDate;
-        this.createdAt = LocalDateTime.now();
-        this.updatedAt = LocalDateTime.now();
     }
 }
